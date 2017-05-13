@@ -7,7 +7,6 @@
 <body style="background: #fcd001">
 <?php
     include "dbconfig.php";
-    $result = pg_query($dbConn, "select * from jenjang");
 ?>
 
 <!-- Fixed navbar -->

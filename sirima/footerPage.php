@@ -4,8 +4,12 @@
         </div>
     </footer>
 
+    <?php pg_close($dbConn); ?>
+
     <!-- our JavaScript -->
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/sirima.js"></script>
     <script type="javascript">
         $(document).ready(function () {
             $('.datepicker').datepicker();

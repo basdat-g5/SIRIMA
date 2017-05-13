@@ -5,7 +5,13 @@
  * Date: 5/6/2017
  * Time: 3:52 PM
  */
-include "headerPage.php"; ?>
+include "headerPage.php";
+$params = "";
+if (isset($_POST["jenjang"]))
+{ $params = $_POST["jenjang"];}
+
+if($params == "S1") {
+?>
     <div class="container" style="margin-top: 75px;">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -107,4 +113,4 @@ include "headerPage.php"; ?>
             </div>
         </div>
     </div>
-<?php include "footerPage.php"; ?>
+<?php } include "footerPage.php"; ?>
