@@ -14,11 +14,11 @@
 <div class="container" style="margin-top: 100px;">
     <div class="well">
   <h2 align="center">LIHAT KARTU UJIAN</h2>
-  <form class="form-horizontal" action='detail_kartu_ujian.php'>
+  <form class="form-horizontal" action='detail_kartu_ujian.php' method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Id Pendaftaran:</label>
       <div class="col-sm-10">
-        <input type="input" class="form-control" id="input" placeholder="Masukkan Id Pendaftaran Anda" name="id">
+        <input type="input" class="form-control" id="input" placeholder="Masukkan Id Pendaftaran Anda" name="id_pendaftaran">
       </div>
     </div>
     <div class="form-group">        

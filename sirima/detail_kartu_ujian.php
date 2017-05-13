@@ -15,36 +15,46 @@
     <div class="well">
   <h2 align="center">KARTU UJIAN</h2>
   <form class="form-horizontal" action="">
+  <?php
+		$query = pg_query("select distinct p.id, pl.nama_lengkap, ps.no_kartu_ujian, ps.lokasi_tempat, ps.lokasi_kota from pendaftaran p, pelamar pl, pendaftaran_semas ps where p.id = ps.id_pendaftaran and p.pelamar = pl.username and P.id=".$_POST['id_pendaftaran'].";");
+		$data = pg_fetch_assoc($query);
+		
+		if(!$data){
+			echo "TIDAK TERDAFTAR";
+		}else{
+				?>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Id Pendaftaran:</label>
       <div class="col-sm-10">
-        <p class="form-control-static">23</p>
+        <p class="form-control-static"><?php echo $data['id']; ?></p>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Nama Lengkap:</label>
       <div class="col-sm-10">
-        <p class="form-control-static">Fadly Muhammad Ridho</p>
+        <p class="form-control-static"><?php echo $data['nama_lengkap']; ?></p>
       </div>
     </div>
 	<div class="form-group">
       <label class="control-label col-sm-2" for="email">Nomor Kartu Ujian:</label>
       <div class="col-sm-10">
-        <p class="form-control-static">3046735830</p>
+        <p class="form-control-static"><?php echo $data['no_kartu_ujian']; ?></p>
       </div>
     </div>
 	<div class="form-group">
       <label class="control-label col-sm-2" for="email">Lokasi Ujian:</label>
       <div class="col-sm-10">
-        <p class="form-control-static">Fakultas Ilmu Komputer, Depok</p>
+        <p class="form-control-static"><?php echo $data['lokasi_tempat'].', '.$data['lokasi_kota']; ?></p>
       </div>
     </div>
 	<div class="form-group">
       <label class="control-label col-sm-2" for="email">Waktu Ujian:</label>
       <div class="col-sm-10">
-        <p class="form-control-static">6 Juni 2007 08.00 WIB - 6 Juni 2007 12.00 WIB</p>
+        <p class="form-control-static"><?php echo "20/6/2007 08:00 - 24/8/2007 14:00" ?></p>
       </div>
     </div>
+	<?php } 
+	?>
   </form>
 </div>
 </div>
